@@ -1,36 +1,26 @@
-'''
-For running this project
-change your diectory to video_face_recognition(project name)
-then use command python .\main\face_recog.py
-this gives you the output frames
-'''
-
-
-
-import os
 import cv2
 import face_recognition
 
 #importing video file
-video =cv2.VideoCapture(os.path.abspath("main/video/cod_trailer.mp4"))
+video =cv2.VideoCapture("video/cod_trailer.mp4")
 
 #frame count of the video
 length = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
 
 #recognize faces and encode them
-img_alex=face_recognition.load_image_file(os.path.abspath("main/samples/alex.png"))
+img_alex=face_recognition.load_image_file("samples/alex.png")
 enc_alex=face_recognition.face_encodings(img_alex)[0]
 
-img_badguy=face_recognition.load_image_file(os.path.abspath("main/samples/badguy.png"))
+img_badguy=face_recognition.load_image_file("samples/badguy.png")
 enc_badguy=face_recognition.face_encodings(img_badguy)[0]
 
-img_farah=face_recognition.load_image_file(os.path.abspath("main/samples/farah.png"))
+img_farah=face_recognition.load_image_file("samples/farah.png")
 enc_farah=face_recognition.face_encodings(img_farah)[0]
 
-img_laswell=face_recognition.load_image_file(os.path.abspath("main/samples/laswell.png"))
+img_laswell=face_recognition.load_image_file("samples/laswell.png")
 enc_laswell=face_recognition.face_encodings(img_laswell)[0]
 
-img_captain=face_recognition.load_image_file(os.path.abspath("main/samples/price.png"))
+img_captain=face_recognition.load_image_file("samples/price.png")
 enc_captain=face_recognition.face_encodings(img_captain)[0]
 
 #encoded faces list
